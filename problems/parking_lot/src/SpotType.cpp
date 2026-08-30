@@ -1,0 +1,1 @@
+enum class SpotType { MOTORCYCLE, COMPACT, LARGE };

@@ -1,0 +1,1 @@
+enum class VehicleType { Car, Bike, Truck };

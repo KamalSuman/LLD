@@ -1,0 +1,38 @@
+name: C++ CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Configure
+        run: cmake --preset debug
+
+      - name: Build
+        run: cmake --build --preset debug
+
+      - name: Test
+        run: ctest --preset debug
+
+  windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Configure
+        run: cmake -S . -B build/ci -A x64
+
+      - name: Build
+        run: cmake --build build/ci --config Debug
+
+      - name: Test
+        run: ctest --test-dir build/ci -C Debug --output-on-failure

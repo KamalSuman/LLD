@@ -1,0 +1,29 @@
+# CMake output
+/build/
+/out/
+/cmake-build-*/
+CMakeUserPresets.json
+compile_commands.json
+
+# Compiled artifacts
+*.a
+*.dll
+*.exe
+*.lib
+*.o
+*.obj
+*.pdb
+
+# IDE and editor-local files
+.idea/
+.vs/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
